@@ -114,6 +114,10 @@ export class MarkerLayer extends L.LayerGroup {
         return this._css;
     }
 
+    get markers(): Map<string, Marker> {
+        return this._markers
+    }
+
     update(world: World): void {
         getJSON(`tiles/${world.name}/markers/${this._key}.json`)
             .then((json): void => {
